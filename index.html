@@ -28,7 +28,7 @@
     </div>
   </header>
   <main>
-    <div data-view="edit-profile"></div>
+    <div class="hidden" data-view="edit-profile">
     <div class="row">
       <div class="column-full">
         <h2>Edit Profile</h2>
@@ -68,6 +68,38 @@
         </div>
       </div>
     </div>
+   </div>
+   <div data-view="profile">
+    <div class="row">
+      <div class="column-full">
+        <h2>Profile Name</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column-half">
+        <div class="container image-container">
+          <img class="image" src="images/placeholder-image-square.jpg" alt="your image">
+        </div>
+      </div>
+      <div class="column-half">
+        <div class="container profile-info">
+          <img class="icon" src="images/profile-icon.png">
+          <p>Some Username</p>
+        </div>
+        <div class="container profile-info">
+          <img class="icon" src="images/location-icon.png">
+          <p>Some City, Some Country</p>
+        </div>
+        <div class="container bio-info">
+          <p>I am a blank person with a blank name just trying to take up space with
+             a fake profile. I have been nowhere and seen nothing but would really love
+             to see nowhere somewhere else. I write daily about nothing, so you should come
+             see how little you can learn about nothing.
+          </p>
+        </div>
+      </div>
+    </div>
+   </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

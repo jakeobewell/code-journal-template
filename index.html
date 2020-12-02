@@ -12,12 +12,62 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=Sansita+Swashed&display=swap"
+    rel="stylesheet">
 </head>
 <body>
   <header>
+    <div class="row">
+      <div class="column-full">
+        <h1>Code Journal</h1>
+      </div>
+    </div>
   </header>
   <main>
     <div data-view="edit-profile"></div>
+    <div class="row">
+      <div class="column-full">
+        <h2>Edit Profile</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column-half">
+        <div class="container image-container">
+          <img class="image" src="images/placeholder-image-square.jpg" alt="your image">
+        </div>
+      </div>
+      <div class="column-half">
+        <div class="container form-container">
+          <form id="form-one" >
+            <label for="user-image">Avatar URL</label><br>
+            <input id="user-image" type="url" name="avatarUrl" required><br>
+            <label for="user-name">Username</label><br>
+            <input id="user-name" type="text" name="username" required><br>
+            <label for="full-name">Full Name</label><br>
+            <input id="full-name" type="text" name="fullName" required><br>
+            <label for="location">Location</label><br>
+            <input id="location" type="text" name="location" required>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column-full">
+        <div class="container bio-container">
+          <form id="form-two">
+            <label for="bio">Bio</label><br>
+            <textarea id="bio" name="bio"></textarea><br>
+            <div class="button-container">
+              <button type="submit" value="submit">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

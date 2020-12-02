@@ -21,6 +21,7 @@
 @media screen and (min-width: 768px) {
   .container {
     max-width: 900px;
+    padding-top: 1rem;
   }
 
   .column-full,
@@ -30,5 +31,18 @@
 
   .column-half {
     width: 50%;
+  }
+
+  .image-container {
+    padding-left: 20%;
+  }
+
+  .form-container {
+    padding-right: 20%;
+  }
+
+  .bio-container {
+    padding-left: 10%;
+    padding-right: 10%;
   }
 }

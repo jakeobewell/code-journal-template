@@ -114,7 +114,13 @@ function renderProfile() {
   var $bio = document.createElement('p');
   $bio.textContent = newData.profile.bio;
 
+  var $link = document.createElement('a');
+  $link.setAttribute('href', '#');
+  $link.setAttribute('data-view', 'profile');
+  $link.textContent = 'Edit Profile';
+
   $containerThree.appendChild($bio);
+  $containerThree.appendChild($link);
   $columnHalfTwo.appendChild($containerThree);
 
   $rowTwo.appendChild($columnHalfTwo);

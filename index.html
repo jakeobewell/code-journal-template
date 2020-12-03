@@ -28,74 +28,76 @@
     </div>
   </header>
   <main>
-    <div class="hidden" data-view="edit-profile">
-    <div class="row">
-      <div class="column-full">
-        <h2>Edit Profile</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="column-half">
-        <div class="container image-container">
-          <img class="image" src="images/placeholder-image-square.jpg" alt="your image">
+    <div id="create-view" class="hidden display" data-view="edit-profile">
+      <div class="row">
+        <div class="column-full">
+          <h2>Edit Profile</h2>
         </div>
       </div>
-      <div class="column-half">
-        <div class="container form-container">
-          <form id="form-one" >
-            <label for="user-image">Avatar URL</label><br>
-            <input id="user-image" type="url" name="avatarUrl" required><br>
-            <label for="user-name">Username</label><br>
-            <input id="user-name" type="text" name="username" required><br>
-            <label for="full-name">Full Name</label><br>
-            <input id="full-name" type="text" name="fullName" required><br>
-            <label for="location">Location</label><br>
-            <input id="location" type="text" name="location" required>
-          </form>
+      <div class="row">
+        <div class="column-half">
+          <div class="container image-container">
+            <img class="image" src="images/placeholder-image-square.jpg" alt="your image">
+          </div>
+        </div>
+        <div class="column-half">
+          <div class="container form-container">
+            <form id="form-one" >
+              <label for="user-image">Avatar URL</label><br>
+              <input id="user-image" type="url" name="avatarUrl" required><br>
+              <label for="user-name">Username</label><br>
+              <input id="user-name" type="text" name="username" required><br>
+              <label for="full-name">Full Name</label><br>
+              <input id="full-name" type="text" name="fullName" required><br>
+              <label for="location">Location</label><br>
+              <input id="location" type="text" name="location" required>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="column-full">
-        <div class="container bio-container">
-          <form id="form-two">
-            <label for="bio">Bio</label><br>
-            <textarea id="bio" name="bio"></textarea><br>
-            <div class="button-container">
-              <button type="submit" value="submit">Save</button>
-            </div>
-          </form>
+      <div class="row">
+        <div class="column-full">
+          <div class="container bio-container">
+            <form id="form-two">
+              <label for="bio">Bio</label><br>
+              <textarea id="bio" name="bio"></textarea><br>
+              <div class="button-container">
+                <button type="submit" value="submit">Save</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
    </div>
-   <div data-view="profile">
-    <div class="row">
-      <div class="column-full">
-        <h2>Profile Name</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="column-half">
-        <div class="container image-container">
-          <img class="image" src="images/placeholder-image-square.jpg" alt="your image">
+   <div id="profile-view" class="display" data-view="profile">
+     <div class="profile-container">
+      <div class="row">
+        <div class="column-full">
+          <h2>Profile Name</h2>
         </div>
       </div>
-      <div class="column-half">
-        <div class="container profile-info">
-          <img class="icon" src="images/profile-icon.png">
-          <p>Some Username</p>
+      <div class="row">
+        <div class="column-half">
+          <div class="container image-container">
+            <img class="image" src="images/placeholder-image-square.jpg" alt="your image">
+          </div>
         </div>
-        <div class="container profile-info">
-          <img class="icon" src="images/location-icon.png">
-          <p>Some City, Some Country</p>
-        </div>
-        <div class="container bio-info">
-          <p>I am a blank person with a blank name just trying to take up space with
-             a fake profile. I have been nowhere and seen nothing but would really love
-             to see nowhere somewhere else. I write daily about nothing, so you should come
-             see how little you can learn about nothing.
-          </p>
+        <div class="column-half">
+          <div class="container profile-info">
+            <img class="icon" src="images/profile-icon.png">
+            <p>Some Username</p>
+          </div>
+          <div class="container profile-info">
+            <img class="icon" src="images/location-icon.png">
+            <p>Some City, Some Country</p>
+          </div>
+          <div class="container bio-info">
+            <p>I am a blank person with a blank name just trying to take up space with
+              a fake profile. I have been nowhere and seen nothing but would really love
+              to see nowhere somewhere else. I write daily about nothing, so you should come
+              see how little you can learn about nothing.
+            </p>
+          </div>
         </div>
       </div>
     </div>

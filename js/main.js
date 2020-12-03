@@ -23,15 +23,23 @@ addEventListener('submit', function (event) {
   data.profile.location = document.getElementById('location').value;
   data.profile.avatarUrl = document.getElementById('user-image').value;
   data.profile.bio = document.getElementById('bio').value;
+  if (data.profile.username === '' || data.profile.fullName === '' || data.profile.location === '' || data.profile.avatarUrl === '' || data.profile.bio === '') {
+    event.preventDefault();
+    return;
+  }
   var dataJSON = JSON.stringify(data);
   localStorage.setItem('data-local-storage', dataJSON);
   swapView('profile');
   event.preventDefault();
 });
 
-addEventListener('beforeunload', function (event) {
-  var dataJSON = JSON.stringify(data);
-  localStorage.setItem('data-local-storage', dataJSON);
+window.addEventListener('DOMContentLoaded', function (event) {
+  var currentData = JSON.parse(localStorage.getItem('data-local-storage'));
+  if (currentData) {
+    swapView('profile');
+  } else {
+    swapView('edit-profile');
+  }
 });
 
 function renderProfile() {

@@ -24,7 +24,8 @@ h2,
 input,
 label,
 textarea,
-button {
+button,
+p {
   font-family: "pt sans", sans-serif;
 }
 
@@ -56,4 +57,15 @@ button {
 
 label {
   font-weight: 700;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+.profile-info {
+  display: flex;
 }

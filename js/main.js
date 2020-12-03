@@ -37,8 +37,6 @@ window.addEventListener('DOMContentLoaded', function (event) {
   var currentData = JSON.parse(localStorage.getItem('data-local-storage'));
   if (currentData) {
     swapView('profile');
-  } else {
-    swapView('edit-profile');
   }
 });
 
@@ -132,11 +130,26 @@ function renderProfile() {
 function swapView(name) {
 
   var views = document.querySelectorAll('.display');
+  var profileData = JSON.parse(localStorage.getItem('data-local-storage'));
+
+  var _username = document.getElementById('user-name');
+  var _fullName = document.getElementById('full-name');
+  var _userImage = document.getElementById('user-image');
+  var _location = document.getElementById('location');
+  var _bio = document.getElementById('bio');
 
   if (name === 'profile') {
     var $profileView = document.getElementById('profile-view');
     $profileView.innerHTML = '';
     $profileView.appendChild(renderProfile());
+  }
+
+  if (name === 'edit-profile') {
+    _username.value = profileData.profile.username;
+    _fullName.value = profileData.profile.fullName;
+    _userImage.value = profileData.profile.avatarUrl;
+    _location.value = profileData.profile.location;
+    _bio.value = profileData.profile.bio;
   }
 
   for (var i = 0; i < views.length; i++) {

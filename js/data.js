@@ -11,3 +11,5 @@ var data = {
   },
   entries: []
 };
+
+var currentData = JSON.parse(localStorage.getItem('data-local-storage'));

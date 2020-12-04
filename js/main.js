@@ -22,7 +22,6 @@ addEventListener('submit', function (event) {
 });
 
 window.addEventListener('DOMContentLoaded', function (event) {
-  var currentData = JSON.parse(localStorage.getItem('data-local-storage'));
   if (currentData) {
     swapView('profile');
   }

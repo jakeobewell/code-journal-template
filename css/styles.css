@@ -5,9 +5,9 @@ header {
 h1 {
   font-family: "sansita swashed", serif;
   color: white;
+  padding-left: 20%;
 }
 
-h1,
 h2 {
   padding-left: 10%;
 }
@@ -22,6 +22,7 @@ img {
 
 h2,
 input,
+a,
 label,
 textarea,
 button,
@@ -68,4 +69,24 @@ label {
 
 .profile-info {
   display: flex;
+}
+
+.edit-link {
+  background-color: rgb(185, 185, 185);
+  padding: 0.5rem;
+  text-decoration: none;
+  color: black;
+  border-radius: 5px;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 25px;
+  padding-right: 20px;
+}
+
+nav > a {
+  color: white;
+  font-size: 1.2em;
 }

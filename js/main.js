@@ -5,18 +5,6 @@ imageInput.addEventListener('input', function (event) {
   image.setAttribute('src', imageInput.value);
 });
 
-var data = {
-  view: 'edit-profile',
-  profile: {
-    username: '',
-    fullName: '',
-    location: '',
-    avatarUrl: '',
-    bio: ''
-  },
-  entries: []
-};
-
 addEventListener('submit', function (event) {
   data.profile.username = document.getElementById('user-name').value;
   data.profile.fullName = document.getElementById('full-name').value;
@@ -116,7 +104,8 @@ function renderProfile() {
 
   var $link = document.createElement('a');
   $link.setAttribute('href', '#');
-  $link.setAttribute('data-view', 'profile');
+  $link.setAttribute('data-view', 'edit-profile');
+  $link.setAttribute('class', 'edit-link')
   $link.textContent = 'Edit Profile';
 
   $containerThree.appendChild($bio);
@@ -143,6 +132,7 @@ function swapView(name) {
   var _userImage = document.getElementById('user-image');
   var _location = document.getElementById('location');
   var _bio = document.getElementById('bio');
+  var _image = document.querySelector('.image');
 
   if (name === 'profile') {
     var $profileView = document.getElementById('profile-view');
@@ -156,6 +146,7 @@ function swapView(name) {
     _userImage.value = profileData.profile.avatarUrl;
     _location.value = profileData.profile.location;
     _bio.value = profileData.profile.bio;
+    _image.setAttribute('src', profileData.profile.avatarUrl);
   }
 
   for (var i = 0; i < views.length; i++) {
@@ -167,3 +158,20 @@ function swapView(name) {
     }
   }
 }
+
+addEventListener('click', function(event) {
+
+  var _data = JSON.parse(localStorage.getItem('data-local-storage'));
+
+  if (event.target.tagName !== "A") {
+    return;
+  }
+  if (event.target.tagName === "A") {
+    if (_data) {
+    swapView(event.target.getAttribute('data-view'));
+    }
+    else {
+      return;
+    }
+  }
+})

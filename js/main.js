@@ -1,11 +1,20 @@
 var imageInput = document.getElementById('user-image');
-var image = document.querySelector('.image');
+var image = document.getElementById('profile-image');
 
 imageInput.addEventListener('input', function (event) {
   image.setAttribute('src', imageInput.value);
 });
 
-addEventListener('submit', function (event) {
+var entryImageInput = document.getElementById('entry-image-url');
+var entryImage = document.getElementById('entry-image');
+
+entryImageInput.addEventListener('input', function (event) {
+  entryImage.setAttribute('src', entryImageInput.value);
+});
+
+var formTwo = document.getElementById('form-two')
+
+formTwo.addEventListener('submit', function (event) {
   data.profile.username = document.getElementById('user-name').value;
   data.profile.fullName = document.getElementById('full-name').value;
   data.profile.location = document.getElementById('location').value;
@@ -18,6 +27,25 @@ addEventListener('submit', function (event) {
   var dataJSON = JSON.stringify(data);
   localStorage.setItem('data-local-storage', dataJSON);
   swapView('profile');
+  event.preventDefault();
+});
+
+var formFour = document.getElementById('form-four');
+
+formFour.addEventListener('submit', function (event) {
+  var entryData = {};
+
+  entryData.imageURL = document.getElementById('entry-image-url').value;
+  entryData.title = document.getElementById('title').value;
+  entryData.notes = document.getElementById('notes').value;
+
+  if (entryData.imageURL === '' || entryData.title === '' || entryData.notes === '') {
+    event.preventDefault();
+    return;
+  }
+
+  data.entries.push(entryData);
+
   event.preventDefault();
 });
 

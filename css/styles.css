@@ -71,12 +71,13 @@ label {
   display: flex;
 }
 
-.edit-link {
+.edit-link, .new-entry {
   background-color: rgb(185, 185, 185);
   padding: 0.5rem;
   text-decoration: none;
   color: black;
   border-radius: 5px;
+  text-transform: uppercase;
 }
 
 nav {
@@ -89,4 +90,15 @@ nav {
 nav > a {
   color: white;
   font-size: 1.2em;
+  margin-left: 30px;
+}
+
+.entries-header {
+  padding-left: 20%;
+}
+
+.new-entry-container {
+  margin-top: 10px;
+  padding-left: 20%;
+  margin-right: 100%
 }

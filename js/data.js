@@ -18,5 +18,5 @@ if (JSON.parse(localStorage.getItem('data-local-storage')) !== null) {
 
 window.addEventListener('beforeunload', function (event) {
   var currentDataJSON = JSON.stringify(currentData);
-  localStorage.setItem('javascript-local-storage', currentDataJSON);
+  localStorage.setItem('data-local-storage', currentDataJSON);
 });

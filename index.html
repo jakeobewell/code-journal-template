@@ -28,11 +28,61 @@
       <div class="column-half">
         <nav>
           <a href="#" data-view="profile">Profile</a>
+          <a href="#" data-view="entries">Entries</a>
         </nav>
       </div>
     </div>
   </header>
   <main>
+    <div class="display hidden" data-view="entries">
+      <div class="row">
+        <div class="column-half">
+          <h2 class="entries-header">Entries</h2>
+        </div>
+        <div class="column-half">
+          <div class="container new-entry-container">
+            <a class="new-entry" href="#" data-view="create-entry">New</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="display hidden" data-view="create-entry">
+      <div class="row">
+        <div class="column-full">
+          <h2>New Entry</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column-half">
+          <div class="container image-container">
+            <img id="entry-image" src="images/placeholder-image-square.jpg" alt="your image">
+          </div>
+        </div>
+        <div class="column-half">
+          <div class="container form-container">
+            <form id="form-three">
+              <label for="entry-image-url">Image URL</label><br>
+              <input id="entry-image-url" type="url" name="entryURL" required><br>
+              <label for="title">Title</label><br>
+              <input id="title" type="text" name="title" required><br>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column-full">
+          <div class="container bio-container">
+            <form id="form-four">
+              <label for="notes">Notes</label><br>
+              <textarea id="notes" name="notes"></textarea><br>
+              <div class="button-container">
+                <button id="entry-button" type="submit" value="submit">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <div id="create-view" class="display" data-view="edit-profile">
       <div class="row">
         <div class="column-full">
@@ -42,7 +92,7 @@
       <div class="row">
         <div class="column-half">
           <div class="container image-container">
-            <img class="image" src="images/placeholder-image-square.jpg" alt="your image">
+            <img class="image" id="profile-image" src="images/placeholder-image-square.jpg" alt="your image">
           </div>
         </div>
         <div class="column-half">
@@ -67,7 +117,7 @@
               <label for="bio">Bio</label><br>
               <textarea id="bio" name="bio"></textarea><br>
               <div class="button-container">
-                <button type="submit" value="submit">Save</button>
+                <button id="edit-profile-button" type="submit" value="submit">Save</button>
               </div>
             </form>
           </div>

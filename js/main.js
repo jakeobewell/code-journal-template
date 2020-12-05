@@ -1,11 +1,20 @@
 var imageInput = document.getElementById('user-image');
-var image = document.querySelector('.image');
+var image = document.getElementById('profile-image');
 
 imageInput.addEventListener('input', function (event) {
   image.setAttribute('src', imageInput.value);
 });
 
-addEventListener('submit', function (event) {
+var entryImageInput = document.getElementById('entry-image-url');
+var entryImage = document.getElementById('entry-image');
+
+entryImageInput.addEventListener('input', function (event) {
+  entryImage.setAttribute('src', entryImageInput.value);
+});
+
+var formTwo = document.getElementById('form-two')
+
+formTwo.addEventListener('submit', function (event) {
   data.profile.username = document.getElementById('user-name').value;
   data.profile.fullName = document.getElementById('full-name').value;
   data.profile.location = document.getElementById('location').value;
@@ -15,9 +24,40 @@ addEventListener('submit', function (event) {
     event.preventDefault();
     return;
   }
+  if (currentData) {
+  var _entries = currentData.entries;
+  data.entries.push(_entries);
+  }
   var dataJSON = JSON.stringify(data);
   localStorage.setItem('data-local-storage', dataJSON);
+  data.entries = [];
   swapView('profile');
+  event.preventDefault();
+});
+
+var formFour = document.getElementById('form-four');
+var formThree = document.getElementById('form-three');
+
+formFour.addEventListener('submit', function (event) {
+  var entryData = {};
+
+  entryData.imageURL = document.getElementById('entry-image-url').value;
+  entryData.title = document.getElementById('title').value;
+  entryData.notes = document.getElementById('notes').value;
+
+  if (entryData.imageURL === '' || entryData.title === '' || entryData.notes === '') {
+    event.preventDefault();
+    return;
+  }
+
+  currentData.entries.push(entryData);
+  var entryJSON = JSON.stringify(currentData);
+  localStorage.setItem('data-local-storage', entryJSON);
+
+  formFour.reset();
+  formThree.reset();
+  entryImage.setAttribute('src', 'images/placeholder-image-square.jpg');
+  swapView('entries');
   event.preventDefault();
 });
 
@@ -160,13 +200,13 @@ function swapView(name) {
 
 addEventListener('click', function(event) {
 
-  var _data = JSON.parse(localStorage.getItem('data-local-storage'));
+  var _currentData = JSON.parse(localStorage.getItem('data-local-storage'));
 
   if (event.target.tagName !== "A") {
     return;
   }
   if (event.target.tagName === "A") {
-    if (_data) {
+    if (_currentData) {
     swapView(event.target.getAttribute('data-view'));
     }
     else {

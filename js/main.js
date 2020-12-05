@@ -24,13 +24,19 @@ formTwo.addEventListener('submit', function (event) {
     event.preventDefault();
     return;
   }
+  if (currentData) {
+  var _entries = currentData.entries;
+  data.entries.push(_entries);
+  }
   var dataJSON = JSON.stringify(data);
   localStorage.setItem('data-local-storage', dataJSON);
+  data.entries = [];
   swapView('profile');
   event.preventDefault();
 });
 
 var formFour = document.getElementById('form-four');
+var formThree = document.getElementById('form-three');
 
 formFour.addEventListener('submit', function (event) {
   var entryData = {};
@@ -44,8 +50,14 @@ formFour.addEventListener('submit', function (event) {
     return;
   }
 
-  data.entries.push(entryData);
+  currentData.entries.push(entryData);
+  var entryJSON = JSON.stringify(currentData);
+  localStorage.setItem('data-local-storage', entryJSON);
 
+  formFour.reset();
+  formThree.reset();
+  entryImage.setAttribute('src', 'images/placeholder-image-square.jpg');
+  swapView('entries');
   event.preventDefault();
 });
 
@@ -188,13 +200,13 @@ function swapView(name) {
 
 addEventListener('click', function(event) {
 
-  var _data = JSON.parse(localStorage.getItem('data-local-storage'));
+  var _currentData = JSON.parse(localStorage.getItem('data-local-storage'));
 
   if (event.target.tagName !== "A") {
     return;
   }
   if (event.target.tagName === "A") {
-    if (_data) {
+    if (_currentData) {
     swapView(event.target.getAttribute('data-view'));
     }
     else {
